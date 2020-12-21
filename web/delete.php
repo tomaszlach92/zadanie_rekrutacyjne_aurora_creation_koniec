@@ -6,12 +6,9 @@ require_once '../vendor/autoload.php';
 
 $app = new App\App();
 
-$conn = mysqli_connect("localhost", "zadanie", "zadanie", "zadanie");
-
 $id = $_GET['id'];
 
-$sql = "DELETE FROM `articles` WHERE `id` = $id";
-$data = mysqli_query($conn, $sql);
+$data = $app->database->delete($id);
 
 if ($data) {
     $app->session->addFlash('success', 'Usunięto artykuł');
@@ -19,4 +16,4 @@ if ($data) {
 } else {
     echo 'Coś poszło nie tak ';
 }
-?>
+

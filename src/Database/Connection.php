@@ -96,4 +96,12 @@ class Connection {
         return $result;
     }
 
+    public function delete($id) {
+        $sql = "DELETE FROM `articles` WHERE `id` = $id";
+        $stmt = $this->conn->prepare($sql);
+        $result = $stmt->execute(array($id));
+
+        return $result;
+    }
+
 }

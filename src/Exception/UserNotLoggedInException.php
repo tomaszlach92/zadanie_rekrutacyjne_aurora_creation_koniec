@@ -6,7 +6,7 @@ namespace App\Exception;
 
 class UserNotLoggedInException extends \Exception {
 
-    public function __construc($message = 'Użytkownik nie jest zalogowany') {
+    public function __construct($message = 'Użytkownik nie jest zalogowany') {
         parent::__construct($message);
     }
 
