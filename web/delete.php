@@ -14,6 +14,7 @@ $sql = "DELETE FROM `articles` WHERE `id` = $id";
 $data = mysqli_query($conn, $sql);
 
 if ($data) {
+    $app->session->addFlash('success', 'Usunięto artykuł');
     $app->router->redirect('index.php');
 } else {
     echo 'Coś poszło nie tak ';
